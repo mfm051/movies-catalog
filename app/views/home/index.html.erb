@@ -13,3 +13,16 @@
   </ul>
 <% end %>
 <%= link_to "Cadastrar gênero", new_genre_path %>
+<% if @directors.any? %>
+  <h2>Diretores</h2>
+  <ul>
+    <% @directors.each do |director| %>
+      <li>
+        <div>
+          <h3><%= director.name %> </h3>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Cadastrar diretor", new_director_path %>
