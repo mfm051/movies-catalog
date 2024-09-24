@@ -1,0 +1,3 @@
+<h1> <%= @director.name %> </h1>
+<%= link_to 'Editar', edit_director_path(@director) %>
+<%= link_to 'Remover', director_path(@director), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } %>
