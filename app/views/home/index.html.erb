@@ -5,9 +5,8 @@
     <% @genres.each do |genre| %>
       <li>
         <div>
-          <h3><%= genre.name %></h3>
-          <%= link_to 'Editar', edit_genre_path(genre) %>
-          <%= link_to 'Remover', genre_path(genre), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } %>
+          <h3><%= genre.name %> </h3>
+          <%= link_to 'Detalhes', genre_path(genre) %>
         </div>
       </li>
     <% end %>
