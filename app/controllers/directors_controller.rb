@@ -24,6 +24,13 @@ class DirectorsController < ApplicationController
     end
   end
 
+  def destroy
+    @director = Director.find(params[:id])
+    if @director.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def director_params = params.require(:director).permit(:name, :birthdate, :country_id, :genre_id)
