@@ -27,3 +27,17 @@
   </ul>
 <% end %>
 <%= link_to "Cadastrar diretor", new_director_path %>
+<% if @movies.any? %>
+  <h2>Filmes</h2>
+  <ul>
+    <% @movies.each do |movie| %>
+      <li>
+        <div>
+          <h3> <%= link_to movie.title, movie_path(movie) %> </h3>
+          <p> <%= movie.year %> </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Cadastrar filme", new_movie_path %>
