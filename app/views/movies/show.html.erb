@@ -1,5 +1,6 @@
 <h1> <%= @movie.title %> </h1>
 <%= link_to 'Editar', edit_movie_path(@movie) %>
+<%= link_to 'Remover', movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } %>
 <dl>
   <dt>Ano de lançamento</dt>
   <dd> <%= @movie.year %> </dd>
