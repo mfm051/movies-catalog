@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_24_165309) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_24_170252) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "directors", force: :cascade do |t|
+    t.string "name"
+    t.date "birthdate"
+    t.integer "country_id", null: false
+    t.integer "genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_directors_on_country_id"
+    t.index ["genre_id"], name: "index_directors_on_genre_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -23,4 +34,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_24_165309) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "directors", "countries"
+  add_foreign_key "directors", "genres"
 end
