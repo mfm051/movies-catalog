@@ -3,7 +3,12 @@
   <h2>Gêneros</h2>
   <ul>
     <% @genres.each do |genre| %>
-      <li><%= genre.name %></li>
+      <li>
+        <div>
+          <h3><%= genre.name %></h3>
+          <%= link_to 'Editar', edit_genre_path(genre) %>
+        </div>
+      </li>
     <% end %>
   </ul>
 <% end %>
