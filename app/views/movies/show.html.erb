@@ -1,0 +1,15 @@
+<h1> <%= @movie.title %> </h1>
+<dl>
+  <dt>Ano de lançamento</dt>
+  <dd> <%= @movie.year %> </dd>
+  <dt>Sinopse</dt>
+  <dd> <%= @movie.synopsis %> </dd>
+  <dt>Duração</dt>
+  <dd> <%= @movie.length %> min</dd>
+  <dt>País</dt>
+  <dd> <%= Country.find(@movie.country_id).name %> </dd>
+  <dt>Gênero</dt>
+  <dd> <%= Genre.find(@movie.genre_id).name %> </dd>
+  <dt>Diretor</dt>
+  <dd> <%= Director.find(@movie.director_id).name %> </dd>
+</dl>
