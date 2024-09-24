@@ -4,10 +4,7 @@
   <ul>
     <% @genres.each do |genre| %>
       <li>
-        <div>
-          <h3><%= genre.name %> </h3>
-          <%= link_to 'Detalhes', genre_path(genre) %>
-        </div>
+        <h3> <%= link_to genre.name, genre_path(genre) %> </h3>
       </li>
     <% end %>
   </ul>
@@ -18,10 +15,7 @@
   <ul>
     <% @directors.each do |director| %>
       <li>
-        <div>
-          <h3><%= director.name %> </h3>
-          <%= link_to 'Detalhes', director_path(director) %>
-        </div>
+        <h3> <%= link_to director.name, director_path(director) %> </h3>
       </li>
     <% end %>
   </ul>
