@@ -1,6 +1,2 @@
 <h1>Editar <%= @genre.name %> </h1>
-<%= form_with model: @genre do |f| %>
-  <%= f.label :name, "Nome" %>
-  <%= f.text_field :name %>
-  <%= f.submit "Atualizar" %>
-<% end %>
+<%= render 'form', genre: @genre %>
