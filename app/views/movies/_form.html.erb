@@ -27,5 +27,9 @@
     <%= f.label :director_id, 'Diretor' %>
     <%= f.collection_select :director_id, Director.order(:name), :id, :name %>
   </div>
+  <div>
+    <%= f.label :published, 'Publicar' %>
+    <%= f.check_box :published, checked: movie.published %>
+  </div>
   <%= f.submit 'Enviar' %>
 <% end %>
