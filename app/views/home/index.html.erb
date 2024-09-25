@@ -9,8 +9,11 @@
   <%= render 'directors/overview', directors: @directors %>
 <% end %>
 <%= link_to "Cadastrar diretor", new_director_path %>
-<% if @movies.any? %>
+<% if @movies_published.any? %>
   <h2>Filmes</h2>
-  <%= render 'movies/overview', movies: @movies %>
+  <%= render 'movies/overview', movies: @movies_published %>
 <% end %>
 <%= link_to "Cadastrar filme", new_movie_path %>
+<% if @movies_draft.any? %>
+  <%= link_to 'Rascunhos', movies_path %>
+<% end %>

@@ -1,4 +1,8 @@
 class MoviesController < ApplicationController
+  def index
+    @movies_draft = Movie.where(published: false)
+  end
+
   def show
     @movie = Movie.find(params[:id])
   end
