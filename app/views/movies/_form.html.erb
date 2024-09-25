@@ -5,7 +5,7 @@
   </div>
   <div>
     <%= f.label :year, 'Ano de lançamento' %>
-    <%= select_year Date.today, start_year: 1895, end_year: Date.today.year, prefix: "movie", field_name: 'year' %>
+    <%= select_year movie.year || Date.today, start_year: 1895, end_year: Date.today.year + 10, prefix: "movie", field_name: 'year' %>
   </div>
   <div>
     <%= f.label :synopsis, 'Sinopse' %>
