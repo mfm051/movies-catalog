@@ -1,13 +1,7 @@
 <h1>Catálogo de filmes</h1>
 <% if @genres.any? %>
   <h2>Gêneros</h2>
-  <ul>
-    <% @genres.each do |genre| %>
-      <li>
-        <h3> <%= link_to genre.name, genre_path(genre) %> </h3>
-      </li>
-    <% end %>
-  </ul>
+  <%= render 'genres/overview', genres: @genres %>
 <% end %>
 <%= link_to "Cadastrar gênero", new_genre_path %>
 <% if @directors.any? %>
