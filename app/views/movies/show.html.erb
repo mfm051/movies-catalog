@@ -1,9 +1,15 @@
-<h1> <%= @movie.title %> </h1>
+<h1><%= @movie.title %></h1>
+<p>
+  <% if @movie.released? %>
+    Lançado em 
+  <% else %>
+    A ser lançado em 
+  <% end %>
+  <%= @movie.year %>
+</p>
 <%= link_to 'Editar', edit_movie_path(@movie) %>
 <%= link_to 'Remover', movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } %>
 <dl>
-  <dt>Ano de lançamento</dt>
-  <dd> <%= @movie.year %> </dd>
   <dt>Sinopse</dt>
   <dd> <%= @movie.synopsis %> </dd>
   <dt>Duração</dt>

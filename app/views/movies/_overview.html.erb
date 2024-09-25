@@ -1,7 +1,14 @@
 <% movies.each do |movie| %>
   <ul>
     <li>
-      <p> <%= link_to movie.title, movie_path(movie) %> (<%= movie.year %>) </p>
+      <p>
+        <%= link_to movie.title, movie_path(movie) %>
+        <% if movie.released? %>
+          (Já lançado)
+        <% else %>
+          (A ser lançado)
+        <% end %>
+      </p>
     </li>
   </ul>
 <% end %>
