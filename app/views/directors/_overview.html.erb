@@ -1,0 +1,7 @@
+<ul>
+  <% directors.each do |director| %>
+    <li>
+      <p> <%= link_to director.name, director_path(director) %> </p>
+    </li>
+  <% end %>
+</ul>

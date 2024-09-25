@@ -12,13 +12,7 @@
 <%= link_to "Cadastrar gênero", new_genre_path %>
 <% if @directors.any? %>
   <h2>Diretores</h2>
-  <ul>
-    <% @directors.each do |director| %>
-      <li>
-        <h3> <%= link_to director.name, director_path(director) %> </h3>
-      </li>
-    <% end %>
-  </ul>
+  <%= render 'directors/overview', directors: @directors %>
 <% end %>
 <%= link_to "Cadastrar diretor", new_director_path %>
 <% if @movies.any? %>
