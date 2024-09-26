@@ -1,6 +1,7 @@
 <% movies.each do |movie| %>
   <ul>
     <li>
+      <%= image_tag('no-poster.jpg', size: 200) %>
       <p>
         <%= link_to movie.title, movie_path(movie) %>
         <% if movie.released? %>
