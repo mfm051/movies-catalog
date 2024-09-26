@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_25_203957) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_26_140253) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_25_203957) do
     t.datetime "updated_at", null: false
     t.boolean "released"
     t.boolean "published", default: true
+    t.binary "poster"
     t.index ["country_id"], name: "index_movies_on_country_id"
     t.index ["director_id"], name: "index_movies_on_director_id"
     t.index ["genre_id"], name: "index_movies_on_genre_id"
