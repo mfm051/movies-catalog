@@ -13,3 +13,5 @@
   <h2>Filmes dirigidos por <%= @director.name %>: </h2>
   <%= render 'movies/overview', movies: @director.movies %>
 <% end %>
+
+<%= link_to "Cadastrar novo filme", new_movie_path(director: "#{@director.id}") %>
