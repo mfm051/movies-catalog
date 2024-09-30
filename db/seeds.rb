@@ -23,6 +23,11 @@ Movie.find_or_create_by!(
     genre: Genre.find_or_create_by!(name: 'Aventura')
 )
 
+Movie.last.poster.attach(
+  io: File.open(File.join(Rails.root, 'app/assets/images/LOTRposter.jpg')),
+  filename: 'LOTRposter.jpg'
+)
+
 Movie.find_or_create_by!(
   title: 'Harry Potter and the Prisoner of Azkaban',
     year: 2004,
@@ -38,6 +43,11 @@ Movie.find_or_create_by!(
     genre: Genre.find_or_create_by!(name: 'Aventura')
 )
 
+Movie.last.poster.attach(
+  io: File.open(File.join(Rails.root, 'app/assets/images/HPposter.jpg')),
+  filename: 'HPposter.jpg'
+)
+
 Movie.find_or_create_by!(
   title: 'Star Wars: Episode V - The Empire Strikes Back',
     year: 1980,
@@ -51,4 +61,9 @@ Movie.find_or_create_by!(
       genre: Genre.find_or_create_by!(name: 'Drama')
     ),
     genre: Genre.find_or_create_by!(name: 'Ficção científica')
+)
+
+Movie.last.poster.attach(
+  io: File.open(File.join(Rails.root, 'app/assets/images/SWposter.jpg')),
+  filename: 'SWposter.jpg'
 )
