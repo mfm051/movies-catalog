@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+countries = %w[Brasil Namíbia Geórgia].map do |country_name|
+  Country.create(name: country_name)
+end
+
+genres = %w[Ação Comédia Drama Horror].map do |genre_name|
+  Genre.create(name: genre_name)
+end
+
+directors = %w[Zé Maria Jão Fabiana].map do |director_name|
+  Director.create(name: director_name, genre: genres.sample, country: countries.sample)
+end
+
+['Um Filme', 'Outro Filme', 'Mais um filme'].each do |movie_title|
+  Movie.create(title: movie_title, country: countries.sample,
+                            director: directors.sample, genre: genres.sample, year: Date.today.year)
+end
