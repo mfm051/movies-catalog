@@ -11,3 +11,4 @@ Sistema (muito) simples para catálogo de filmes feito para aprendizado em Ruby 
  1. Clonar repositório: `git clone git@github.com:mfm051/movies-catalog.git && cd movies-catalog`
  2. Preparar banco de dados: `rails db:setup`
  3. Rodar servidor local: `rails server`
+ 4. Ver aplicação em http://localhost:3000/
