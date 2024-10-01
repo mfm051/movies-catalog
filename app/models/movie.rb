@@ -7,7 +7,11 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
 
-  before_save do
+  before_validation :determine_released
+
+  private
+
+  def determine_released
     self.released = year <= Date.today.year
   end
 end
