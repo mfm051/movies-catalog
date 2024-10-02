@@ -8,8 +8,10 @@
     <%= f.date_field :birthdate %>
   </div>
   <div>
-    <%= f.label :country_id, 'País de origem' %>
-    <%= f.collection_select :country_id, Country.order(:name), :id, :name %>
+    <%= f.fields_for :country, director.country do |country| %>
+      <%= country.label :name, 'País de origem' %>
+      <%= country.text_field :name %>
+    <% end %>
   </div>
   <div>
     <%= f.fields_for :genre, director.genre do |genre| %>

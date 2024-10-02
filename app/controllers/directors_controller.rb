@@ -36,8 +36,9 @@ class DirectorsController < ApplicationController
   private
 
   def director_attributes
-    attributes = params.require(:director).permit(:name, :birthdate, :country_id, genre: :name)
+    attributes = params.require(:director).permit(:name, :birthdate, country: :name, genre: :name)
     attributes[:genre] = Genre.find_or_create_by(name: attributes[:genre][:name])
+    attributes[:country] = Country.find_or_create_by(name: attributes[:country][:name])
 
     attributes
   end
