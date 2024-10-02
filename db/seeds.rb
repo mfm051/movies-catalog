@@ -1,3 +1,8 @@
+countries = YAML.load_file('app/assets/countries-pt_BR.yaml').values
+countries.each do |country_name|
+  Country.create(name: country_name)
+end
+
 Movie.find_or_create_by!(
   title: 'The Lord of the Rings: The Fellowship of the Ring',
     year: 2001,
